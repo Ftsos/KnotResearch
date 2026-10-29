@@ -1,9 +1,10 @@
 \documentclass[10pt]{article}
 \usepackage{fullpage}
-\usepackage{amsmath}
+\usepackage{amsmath, amssymb}
 \usepackage{mathtools}
 \usepackage{setspace}
 \usepackage{booktabs}
+\usepackage{tikz-cd}
 \doublespacing
 
 \begin{document}
@@ -46,6 +47,57 @@ For $K, J \subset S^3$, We define the cobordism distance as $d_C(K, J) = g_4(K\#
 
 \subsection{Table}
 
+
+\section{Identities}
+
+We have: 
+\begin{align}
+  g_4(K) &= g_4(K^r) \\
+  d(K, J) &= g_4(\bar{K}, \bar{J}) \\
+  d(K^r, J^r) &= d(K,J)\\
+  d(K^r, J) &= d(K, J^r)
+\end{align}
+
+
+\subsection*{1. Equivalence Class: $K \# J$}
+\[
+\begin{tikzcd}[row sep=huge, column sep=huge]
+K \# J \arrow[r, "\text{---}"] 
+       & \overline{K} \# \overline{J} \arrow[d, "r"] \\
+K^r \# J^r \arrow[u, "r"] 
+       & \overline{K^r} \# \overline{J^r} \arrow[l, "\text{---}"]
+\end{tikzcd}
+\]
+
+\subsection*{2. Equivalence Class: $K \# \overline{J}$}
+\[
+\begin{tikzcd}[row sep=huge, column sep=huge]
+K \# \overline{J} \arrow[r, "\text{---}"] 
+                  & \overline{K} \# J \arrow[d, "r"] \\
+K^r \# \overline{J^r} \arrow[u, "r"] 
+                  & \overline{K^r} \# J^r \arrow[l, "\text{---}"]
+\end{tikzcd}
+\]
+
+\subsection*{3. Equivalence Class: $K \# J^r$}
+\[
+\begin{tikzcd}[row sep=huge, column sep=huge]
+K \# J^r \arrow[r, "\text{---}"] 
+         & \overline{K} \# \overline{J^r} \arrow[d, "r"] \\
+K^r \# J \arrow[u, "r"] 
+         & \overline{K^r} \# \overline{J} \arrow[l, "\text{---}"]
+\end{tikzcd}
+\]
+
+\subsection*{4. Equivalence Class: $K \# \overline{J^r}$}
+\[
+\begin{tikzcd}[row sep=huge, column sep=huge]
+K \# \overline{J^r} \arrow[r, "\text{---}"] 
+                    & \overline{K} \# J^r \arrow[d, "r"] \\
+K^r \# \overline{J} \arrow[u, "r"] 
+                    & \overline{K^r} \# J \arrow[l, "\text{---}"]
+\end{tikzcd}
+\]
 
 %--BIBLIOGRAPHY--%
 %--\begin{thebibliography}{99}--%
