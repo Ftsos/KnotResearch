@@ -34,11 +34,11 @@ For $K, J \subset S^3$, We define the cobordism distance as $d_C(K, J) = g_4(K\#
     \toprule
     $d_C(K, J)$ & $O$ & $3_1$ & $4_1$ & $5_1$ & $5_2$ \\
     \midrule
-    $O$         & x   & x     & x     & x     & x     \\
-    $3_1$       & x   & x     & x     & x     & x     \\
-    $4_1$       & x   & x     & x     & x     & x     \\
-    $5_1$       & x   & x     & x     & x     & x     \\
-    $5_2$       & x   & x     & x     & x     & x     \\
+    $O$         & 0   & 1     & 1     & 2     & 1     \\
+    $3_1$       & .   & 0     & x     & 1     & x     \\
+    $4_1$       & .   & .     & 0     & x     & x     \\
+    $5_1$       & .   & .     & .     & 0     & x     \\
+    $5_2$       & .   & .     & .     & .     & 0     \\
     \bottomrule
   \end{tabular}
   \caption{Concordance distance $d_C(K, J)$ for prime knots up to 5 crossings.}
@@ -98,6 +98,30 @@ K^r \# \overline{J} \arrow[u, "r"]
                     & \overline{K^r} \# J \arrow[l, "\text{---}"]
 \end{tikzcd}
 \]
+
+\newpage
+\section{A Lower Bound}
+
+We know that the Cobordism Distance is subadditive, i.e.
+$g_4(K\#J) \leq g_4(K) + g_4(J)$. From here we can show
+\begin{align*}
+    g_4(K) &= g_4(K \# \overline{J} \# J) \\
+    \implies g_4(K) &\leq g_4(K \# \overline{J}) + g_4(J) \\
+    \implies g_4(K) - g_4(J) &\leq g_4(K \# \overline{J}) \quad \blacksquare \\
+\end{align*}
+Similarly,
+\begin{align*}
+    g_4(J) &= g_4(J \# \overline{K} \# K) \\
+    \implies g_4(J) &\leq g_4(J \# \overline{K}) + g_4(K) \\
+    \implies g_4(J) - g_4(K) &\leq g_4(J \# \overline{K}) \\
+    &= g_4(\overline{J \# \overline{K}}) \\
+    &= g_4(\overline{J} \# K) \\
+    &= g_4(K \# \overline{J}) \quad \blacksquare
+\end{align*}
+Thus,
+\begin{align*}
+    \left|\, g_4(K) - g_4(J) \,\right| \leq g_4(K \# \overline{J}) \leq g_4(K) + g_4(J) \quad \square
+\end{align*}
 
 %--BIBLIOGRAPHY--%
 %--\begin{thebibliography}{99}--%
